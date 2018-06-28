@@ -1,0 +1,16 @@
+@media screen and (max-width: 320px) {
+
+  h1 {
+    font-size: 10em;
+  }
+  #restaurant-list li {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  #restaurant-list li {
+    max-width: 30%;
+  }
+}
