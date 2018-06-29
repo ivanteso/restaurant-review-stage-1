@@ -1,16 +1,52 @@
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
 
-  h1 {
-    font-size: 10em;
+  .filter-options {
+    text-align: center;
   }
-  #restaurant-list li {
-    max-width: 100%;
+
+  #restaurants-list li {
+    width: 100%;
+  }
+  #image-container {
+    width: 80%;
+  }
+
+  #restaurant-info {
+    width: 100%;
+  }
+
+  #reviews-list li {
+    width: 100%;
+    min-height: auto;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
 
-  #restaurant-list li {
-    max-width: 30%;
+  .filter-options {
+    text-align: center;
+  }
+
+  #restaurants-list li {
+    width: calc((75% / 2) - 1em);
+  }
+
+  #image-container {
+    width: 80%;
+  }
+
+  #restaurant-info {
+    width: 100%;
+  }
+
+  #reviews-list li {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  #restaurants-list li {
+    width: 25%;
   }
 }
