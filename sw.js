@@ -1,3 +1,6 @@
+/**
+ * Service Worker store the cache into 'v1'
+ */
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
@@ -55,7 +58,11 @@ self.addEventListener('install', function(event) {
   );
 });
 
-
+/**
+ * If a request match with some cache content, service
+ * worker use the stored resource. If not, fetch the
+ * request from the web
+ */
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(resp) {
