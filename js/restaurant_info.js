@@ -14,6 +14,9 @@ window.initMap = () => {
         center: restaurant.latlng,
         scrollwheel: false
       });
+      google.maps.event.addListenerOnce(map, 'idle', () => {
+        document.getElementsByTagName('iframe')[0].title = "Google Maps";
+      });
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }
@@ -56,8 +59,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.className = 'restaurant-img';
+  image.alt = DBHelper.imageAltForRestaurant(restaurant);
+  image.src = DBHelper.imageUrlForRestaurantInfo(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -95,14 +99,14 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
   if (!reviews) {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
-    container.appendChild(noReviews);
+    container.appendChild(noRecuisviews);
     return;
   }
   const ul = document.getElementById('reviews-list');
@@ -119,6 +123,7 @@ createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
+  name.setAttribute('class', 'name');
   li.appendChild(name);
 
   const date = document.createElement('p');
@@ -143,6 +148,8 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.setAttribute("role", "navigation");
+  li.setAttribute("aria-label", "Selected restaurant");
   breadcrumb.appendChild(li);
 }
 

@@ -80,6 +80,9 @@ window.initMap = () => {
     center: loc,
     scrollwheel: false
   });
+  google.maps.event.addListenerOnce(map, 'idle', () => {
+    document.getElementsByTagName('iframe')[0].title = "Google Maps";
+  });
   updateRestaurants();
 }
 
@@ -140,10 +143,11 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = DBHelper.imageAltForRestaurant(restaurant);
+  image.src = DBHelper.imageUrlForRestaurantList(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -157,6 +161,8 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  let labelText = DBHelper.ariaLabelLink(restaurant);
+  more.setAttribute("aria-label", labelText);
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 

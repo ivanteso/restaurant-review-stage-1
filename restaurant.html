@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Normalize.css for better cross-browser consistency -->
@@ -16,11 +16,11 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" role="navigation" aria-label="Title and link to homepage">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+    <ul id="breadcrumb" role="navigation" aria-label="Pages navigation">
+      <li><a href="/" role="navigation" aria-label="Link to homepage">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -30,21 +30,21 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section class="map-container-inside">
+    <section class="map-container-inside" role="application" aria-label="Map of the selected restaurants">
       <div class="map" id="map_inside"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+      <h2 id="restaurant-name"></h2>
       <div id="image-container">
         <img id="restaurant-img">
       </div>
       <div id="restaurant-info">
-        <p id="restaurant-cuisine"></p>
+        <h3 id="restaurant-cuisine"></h3>
         <p id="restaurant-address"></p>
         <table id="restaurant-hours"></table>
-      </div>           
+      </div>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
@@ -57,7 +57,7 @@
 
   <!-- Beginning footer -->
   <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    Copyright (c) 2017 <a href="/" role="navigation" aria-label="Footer and link to homepage"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->
 

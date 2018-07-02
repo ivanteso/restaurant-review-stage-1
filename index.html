@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -16,17 +16,17 @@
     </nav>
   </header>
 
-  <main id="maincontent">
-    <section class="map-container">
+  <main id="maincontent" role="main">
+    <section class="map-container" role="application" aria-label="Map with restaurants">
       <div class="map"></div>
     </section>
-    <section>
-      <div class="filter-options">
+    <section id="restaurant-section" aria-label="Restaurants filter and list section">
+      <div class="filter-options" role="form" aria-label="Restaurant filter">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <select id="neighborhoods-select" name="neighborhoods" role="listbox" aria-label="Neighborhood selection" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" role="listbox" aria-label="Cuisine selection" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
       </div>

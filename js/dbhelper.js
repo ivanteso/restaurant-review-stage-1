@@ -147,11 +147,40 @@ class DBHelper {
   }
 
   /**
-   * Restaurant image URL.
+   * Restaurant list image URL.
    */
-  static imageUrlForRestaurant(restaurant) {
-    return (`/img/${restaurant.photograph}`);
+  static imageUrlForRestaurantList(restaurant) {
+    if (screen.width <= 425) {
+      return (`/img/${restaurant.photograph}` + '-400px.jpg');
+    } else {
+      return (`/img/${restaurant.photograph}` + '-300px.jpg');
+    };
   }
+
+  /**
+   * Restaurant page image URL.
+   */
+  static imageUrlForRestaurantInfo(restaurant) {
+    if (screen.width <= 425) {
+      return (`/img/${restaurant.photograph}` + '-400px.jpg');
+    } else {
+      return (`/img/${restaurant.photograph}` + '-600px.jpg');
+    };
+  }
+
+  /**
+   * Restaurant image alt attribute
+   */
+   static imageAltForRestaurant(restaurant) {
+     return (`Picture of restaurant ${restaurant.name}`);
+   }
+
+  /**
+   * Restaurant image alt attribute
+   */
+   static ariaLabelLink(restaurant) {
+     return (`Click for more detail about restaurant ${restaurant.name}`);
+   }
 
   /**
    * Map marker for a restaurant.
