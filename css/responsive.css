@@ -7,6 +7,11 @@
   #restaurants-list li {
     width: 100%;
   }
+
+  #restaurants-list .restaurant-img {
+    width: 80%;
+  }
+
   #image-container {
     width: 80%;
   }

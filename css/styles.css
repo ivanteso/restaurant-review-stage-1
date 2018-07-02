@@ -169,10 +169,8 @@ nav h1 a {
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
-  display: block;
   margin: 0;
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%;
 }
 #restaurants-list li h3 {
   color: #c5432c;
