@@ -151,9 +151,9 @@ class DBHelper {
    */
   static imageUrlForRestaurantList(restaurant) {
     if (screen.width <= 425) {
-      return (`/img/${restaurant.photograph}` + '-400px.jpg');
+      return (`./img/${restaurant.photograph}` + '-400px.jpg');
     } else {
-      return (`/img/${restaurant.photograph}` + '-300px.jpg');
+      return (`./img/${restaurant.photograph}` + '-300px.jpg');
     };
   }
 
@@ -162,9 +162,9 @@ class DBHelper {
    */
   static imageUrlForRestaurantInfo(restaurant) {
     if (screen.width <= 425) {
-      return (`/img/${restaurant.photograph}` + '-400px.jpg');
+      return (`./img/${restaurant.photograph}` + '-400px.jpg');
     } else {
-      return (`/img/${restaurant.photograph}` + '-600px.jpg');
+      return (`./img/${restaurant.photograph}` + '-600px.jpg');
     };
   }
 
