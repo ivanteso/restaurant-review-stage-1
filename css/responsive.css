@@ -1,0 +1,52 @@
+@media screen and (max-width: 425px) {
+
+  .filter-options {
+    text-align: center;
+  }
+
+  #restaurants-list li {
+    width: 100%;
+  }
+  #image-container {
+    width: 80%;
+  }
+
+  #restaurant-info {
+    width: 100%;
+  }
+
+  #reviews-list li {
+    width: 100%;
+    min-height: auto;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+
+  .filter-options {
+    text-align: center;
+  }
+
+  #restaurants-list li {
+    width: calc((75% / 2) - 1em);
+  }
+
+  #image-container {
+    width: 75%;
+  }
+
+  #restaurant-info {
+    width: 100%;
+  }
+
+  #reviews-list li {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  #restaurants-list li {
+    width: 25%;
+  }
+}
