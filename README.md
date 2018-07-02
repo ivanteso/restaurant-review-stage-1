@@ -24,7 +24,7 @@ For Phyton `2.x` use the command `python -m SimpleHTTPServer 8000` to serve the 
 
 ## Live Version
 
-You can find a live version of the project [here!](https://ivanteso.github.io/restaurant-review-stage-1/). Enjoy
+You can find a live version of the project [here](https://ivanteso.github.io/restaurant-review-stage-1/)! Enjoy
 
 ## Requirements
 
